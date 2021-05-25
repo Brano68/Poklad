@@ -14,7 +14,6 @@ public class Main {
         map.printMap();
         map.findYourney();
         map.printMap();
-
     }
 
 }
