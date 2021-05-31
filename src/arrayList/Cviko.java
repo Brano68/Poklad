@@ -108,7 +108,7 @@ public class Cviko {
 
 
         List<String> listOfString = new ArrayList<>();
-        listOfString.add("Jozko");
+        listOfString.add("Jozk");
         listOfString.add("Palko");
         listOfString.add("Idem Vonka");
         listOfString.add("za");
