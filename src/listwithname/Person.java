@@ -3,6 +3,7 @@ package listwithname;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Person {
     private String fName;
@@ -35,7 +36,7 @@ public class Person {
 
 
     public void printFirstLetterAndSurname(){
-        System.out.println(this.getfName().substring(0,1) + ". " + this.getlName());
+        System.out.println(this.getfName().substring(0,1) + ". " + this.getlName() + " HashCode: " + this.hashCode());
     }
 
     public void printFirstLetterAndSurnameAndAge(){
@@ -70,9 +71,9 @@ public class Person {
 
     public static void sortListAccordingToTheSurname(List<Person> list){
         Collections.sort(list, Collections.reverseOrder((o1, o2) -> {
-            String cs1 = o1.getlName();
-            String cs2 = o2.getlName();
-            //System.out.println(cs1 + " " + cs2);
+            //String cs1 = o1.getlName();
+            //String cs2 = o2.getlName();
+            //System.out.print(cs1 + " " + cs2 + " ");
             if(compareName1(o1,o2) == 0){
                 return 0;
             }else if(compareName1(o1,o2) == 1){
@@ -199,6 +200,37 @@ public class Person {
         }
 
         return 0;
+    }
+
+    public int hashCode(){
+        String result = "";
+        for(int i = 0; i < lName.length(); i++){
+            if(lName.toLowerCase().charAt(i) ==  'b' || lName.toLowerCase().charAt(i) == 'c'  ||
+                    lName.toLowerCase().charAt(i) == 'd' || lName.toLowerCase().charAt(i) == 'f' ||
+                    lName.toLowerCase().charAt(i) == 'g' || lName.toLowerCase().charAt(i) == 'h' ||
+                    lName.toLowerCase().charAt(i) == 'j' || lName.toLowerCase().charAt(i) == 'k' ||
+                    lName.toLowerCase().charAt(i) == 'l' || lName.toLowerCase().charAt(i) == 'm' ||
+                    lName.toLowerCase().charAt(i) == 'n' || lName.toLowerCase().charAt(i) == 'p' ||
+                    lName.toLowerCase().charAt(i) == 'q' || lName.toLowerCase().charAt(i) == 'r' ||
+                    lName.toLowerCase().charAt(i) == 's' || lName.toLowerCase().charAt(i) == 't' ||
+                    lName.toLowerCase().charAt(i) == 'v' || lName.toLowerCase().charAt(i) == 'w' ||
+                    lName.toLowerCase().charAt(i) == 'x' || lName.toLowerCase().charAt(i) == 'z'){
+                result += 1;
+            }else{
+                result += 0;
+            }
+        }
+        return Integer.parseInt(result,2);
+    }
+
+    public static List<Person> under18Years(List<Person> list){
+        List<Person> list1 = new ArrayList<>();
+        for(Person p : list){
+            if(p.getAge()<=18){
+                list1.add(p);
+            }
+        }
+        return list1;
     }
 
 

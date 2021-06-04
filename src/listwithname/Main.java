@@ -19,6 +19,8 @@ public class Main {
         Person person11 = new Person("Agata", "Nova", 45, 'f');
         Person person12 = new Person("Agata", "Nova", 45, 'f');
         Person person13 = new Person("Rudolf", "Adamkovic", 45, 'm');
+        Person person14 = new Person("Anna", "Adamkovicova", 45, 'f');
+        Person person15 = new Person("Rudo", "Novak", 45, 'm');
         list.add(person1);
         list.add(person2);
         list.add(person3);
@@ -32,6 +34,8 @@ public class Main {
         list.add(person11);
         list.add(person12);
         list.add(person13);
+        list.add(person14);
+        list.add(person15);
 
         System.out.println("1. ---");
         //1uloha cez forech prejst
@@ -52,7 +56,22 @@ public class Main {
         //ak su rovanke priezviska tak nech berie mena
         Person.sortListAccordingToTheSurname(list);
         list.forEach(m->m.printFirstLetterAndSurnameAndAge());
+
+        System.out.println("5 ---");
+        //pod 18 rokov
+        for(Person p : Person.under18Years(list)){
+            System.out.println(p.getfName());
+        }
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
