@@ -30,4 +30,7 @@ public class Main {
         }
         return Integer.parseInt(result,2);
     }
+
+
+
 }
